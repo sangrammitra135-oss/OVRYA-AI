@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "Public Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-emergency: #E51D35;
+  --color-emergency-hover: #C8162B;
+  --color-navy: #10213B;
+  --color-navy-light: #1A3256;
+  --color-teal: #087F8C;
+  --color-teal-hover: #066974;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: #10213B;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+}
+
+@keyframes sos-ring-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.42;
+  }
+  75% {
+    transform: scale(1.28);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.28);
+    opacity: 0;
+  }
+}
+
+@keyframes sos-ring-pulse-outer {
+  0% {
+    transform: scale(1);
+    opacity: 0.24;
+  }
+  85% {
+    transform: scale(1.46);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.46);
+    opacity: 0;
+  }
+}
+
+.sos-pulse-ring {
+  animation: sos-ring-pulse 2.6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  will-change: transform, opacity;
+}
+
+.sos-pulse-ring-delayed {
+  animation: sos-ring-pulse-outer 2.6s cubic-bezier(0.16, 1, 0.3, 1) 0.75s infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sos-pulse-ring,
+  .sos-pulse-ring-delayed {
+    animation: none;
+    opacity: 0.16;
+    transform: scale(1.1);
+  }
+}

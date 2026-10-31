@@ -1,0 +1,6 @@
+{
+  "name": "ORVYA AI",
+  "description": "Frontend emergency SOS request interface and disaster relief host dashboard prototype built for Hackverse.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
